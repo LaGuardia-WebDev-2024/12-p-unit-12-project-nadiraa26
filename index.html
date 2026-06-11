@@ -1,12 +1,12 @@
 <!-- Unit 12 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Standard Animation
-[  ] Custom Animation
-[  ] Include Three Images
+[ yes ] Two Interactive Drop-down Inputs 
+[ yes ] Standard Animation
+[ yes ] Custom Animation
+[ yes ] Include Three Images
 
 Select ONE Additional Feature to Add  
-[ no ] Feature 1 - Google Font
+[ yes ] Feature 1 - Google Font
 [ no ] Feature 2 - Chain jQuery Methods
 [ no ] Feature 3 - .mouseover() & .mouseOut() Methods
 [ no ] Feature 4 - :hover Feature 
@@ -19,19 +19,35 @@ Select ONE Additional Feature to Add
     <meta charset="utf-8" />
     <title>Unit 12 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <h1>Quiz About [Me]</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFyPzNOfORFeFuPMorP8oVaDrgW1uz0ALtUQ&s" 
+    id="books"
+    width="200"
+    >
+    <img src="https://t3.ftcdn.net/jpg/03/46/36/20/360_F_346362053_ULBx9SOUbqob1Scoa5WC7zPdzPznxjuI.jpg" 
+    id="movie"
+    width="190"
+    >
+    <img src="https://cdn.pixabay.com/photo/2015/11/03/09/03/question-mark-1019993_640.jpg" 
+    alt="question"
+    width="190"
+    >
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
         🎥 What is my favorite movie?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">Coraline</option>
+          <option value="movie2">Minions</option>
+          <option value="movie3">Ice Age</option>
+          <option value="movie4">I don't watch movies</option>
         </select>
       </label>
       <button type="submit">Check Movie Answer</button>
@@ -45,10 +61,10 @@ Select ONE Additional Feature to Add
       <label>
         📖 What is my favorite book?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">Five Survive</option>
+          <option value="book2">The Hunger Games</option>
+          <option value="book3">Divergent</option>
+          <option value="book4">I don't Read</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
@@ -67,10 +83,10 @@ Select ONE Additional Feature to Add
         var answer = $answer.val();
 
         if (answer === "movie1") {
-          $("#movie-text").text("YESSSS!");
+          $("#movie-text").text("Correct!!!");
         } 
         else {
-          $("#movie-text").text("Try Again!");
+          $("#movie-text").text("Wrong!!!");
         }
       });
 
@@ -88,6 +104,26 @@ Select ONE Additional Feature to Add
           $("#book-text").text("Try Again!");
         }
       });
+//=======================standard animation
+
+var $pic = $("#books");
+
+$("#books").click(function(){
+  console.log("i clicked here")
+$pic.fadeToggle();
+});
+
+//=======================custom animation
+
+$("#movie").click(function(){
+$("#movie").animate({
+  width:"200px",
+  marginLeft:"100px",
+  borderWidth:"300px"
+},1500);
+
+});
+
       
     </script>
   </body>
